@@ -1,0 +1,203 @@
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    body {
+      background-color: #000;
+      color: white;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      background-color: #000;
+    }
+
+    .logo {
+      font-size: 20px;
+      color: #ad8aff;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .logo:hover {
+      color: #ffffff;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 12px;
+      font-size: 14px;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    nav a:hover {
+      color: #8abaff;
+      transform: scale(1.1);
+    }
+
+    main {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .main-title {
+      margin-top: 100px;
+      font-size: 70px;
+      background: linear-gradient(90deg, #7a8dfd, #b68fff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transition: transform 0.3s;
+    }
+
+    .main-title:hover {
+      transform: scale(1.05);
+    }
+
+    .sub-year {
+      font-size: 36px;
+      color: #fff;
+      margin-top: 10px;
+      transition: color 0.3s;
+    }
+
+    .sub-year:hover {
+      color: #7a8dfd;
+    }
+
+    .tagline {
+      color: #4db5ff;
+      font-size: 20px;
+      margin-top: 20px;
+    }
+
+    .date {
+      color: #b68fff;
+      font-size: 22px;
+      margin-top: 15px;
+    }
+
+    .hosted {
+      margin-top: 25px;
+      font-size: 16px;
+    }
+
+    .hosted span {
+      color: #b68fff;
+    }
+
+    .btn-container {
+      margin-top: 40px;
+    }
+
+    .btn {
+      background: linear-gradient(90deg, #ad8aff, #4db5ff);
+      border: none;
+      border-radius: 30px;
+      padding: 15px 30px;
+      font-size: 14px;
+      color: white;
+      margin: 10px;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 10px #4db5ff;
+    }
+
+    .about-section {
+      padding: 60px 20px;
+      background-color: #0a0a0a;
+      text-align: center;
+    }
+
+    .about-title {
+      font-size: 40px;
+      color: #4db5ff;
+      transition: transform 0.3s;
+    }
+
+    .about-title:hover {
+      transform: scale(1.05);
+    }
+
+    .about-subtitle {
+      color: #aaa;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+
+    .slider-container {
+      position: relative;
+      overflow: hidden;
+      max-width: 1000px;
+      margin: 40px auto 0;
+    }
+
+    .slider {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .about-card {
+      min-width: 100%;
+      background: linear-gradient(to bottom right, #1a1a2e, #2d2d44);
+      border-radius: 16px;
+      padding: 40px 30px;
+      color: #eee;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .about-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 15px rgba(199, 125, 255, 0.5);
+    }
+
+    .about-card h2 {
+      color: #c77dff;
+      font-size: 28px;
+    }
+
+    .about-card h3 {
+      color: #4db5ff;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    .about-card p {
+      font-size: 14px;
+      margin-top: 20px;
+      line-height: 1.6;
+    }
+
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #45275a;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      color: white;
+      font-size: 20px;
+      z-index: 10;
+    }
+
+    .prev {
+      left: 10px;
+    }
+
+    .next {
+      right: 10px;
+    }
