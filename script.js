@@ -1,4 +1,6 @@
 
+
+
     let currentIndex = 0;
     const slider = document.getElementById('slider');
     const totalSlides = slider.children.length;

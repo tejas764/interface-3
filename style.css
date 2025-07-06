@@ -115,7 +115,7 @@
     }
 
     .about-section {
-      padding: 60px 20px;
+      padding: 120px 20px;
       background-color: #0a0a0a;
       text-align: center;
     }
@@ -132,7 +132,7 @@
 
     .about-subtitle {
       color: #aaa;
-      margin-top: 10px;
+      margin-top: 20px;
       font-size: 16px;
     }
 
@@ -140,8 +140,16 @@
       position: relative;
       overflow: hidden;
       max-width: 1000px;
-      margin: 40px auto 0;
+      margin: 80px auto 0;
+      border-radius: 16px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+    .slider-container:hover{
+      transform: scale(1.03);
+      box-shadow: 0 0 15px rgba(199, 125, 255, 0.5);
+      border-radius: 16px;
+    }
+    
 
     .slider {
       display: flex;
@@ -155,12 +163,10 @@
       padding: 40px 30px;
       color: #eee;
       transition: transform 0.3s, box-shadow 0.3s;
+      
     }
 
-    .about-card:hover {
-      transform: scale(1.03);
-      box-shadow: 0 0 15px rgba(199, 125, 255, 0.5);
-    }
+   
 
     .about-card h2 {
       color: #c77dff;
@@ -177,6 +183,7 @@
       font-size: 14px;
       margin-top: 20px;
       line-height: 1.6;
+      font-family: sans-serif;
     }
 
     .nav-btn {
@@ -201,3 +208,67 @@
     .next {
       right: 10px;
     }
+
+      .custom-hover-card {
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.747);
+  }
+
+  .custom-hover-card:hover {
+    background-image: url('assests/coding.gif'); /* Replace with your image path */
+    background-blend-mode: overlay;
+  }
+    .custom-hover-card-1 {
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.623);
+  }
+
+  .custom-hover-card-1:hover {
+    background-image: url('assests/web dev.gif'); /* Replace with your image path */
+    background-blend-mode: overlay;
+  }
+      .custom-hover-card-2 {
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.623);
+  }
+
+  .custom-hover-card-2:hover {
+    background-image: url('assests/ai.gif'); /* Replace with your image path */
+    background-blend-mode: overlay;
+  }
+
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 1s ease forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 1s ease forwards;
+  }
+
+  .delay-200 {
+    animation-delay: 0.2s;
+  }
+
+  .delay-500 {
+    animation-delay: 0.5s;
+  }
