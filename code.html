@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Code Quest</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          animation: {
+            fade: 'fadeIn 1.5s ease-out',
+            float: 'float 3s ease-in-out infinite',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: 0 },
+              '100%': { opacity: 1 },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+          },
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-gradient-to-b from-black via-[#0f172a] to-black text-white font-sans">
+  <div class="max-w-6xl mx-auto py-10 px-4 animate-fade">
+    <!-- Header -->
+    <div class="bg-gradient-to-r from-[#0f172a] to-[#1e293b] rounded-xl p-6 mb-10 border border-[#334155] shadow-lg hover:shadow-purple-700 transition duration-500">
+      <p class="text-sm text-sky-400 font-semibold uppercase tracking-wide">Technical Event</p>
+      <h1 class="text-5xl text-purple-400 font-bold mt-2 mb-4 animate-float">Code Quest</h1>
+      <p class="text-gray-300 text-lg max-w-3xl">
+        Ultimate programming competition testing your coding skills across multiple languages and frameworks. Participants will face challenging problems that test their algorithmic thinking, problem-solving abilities, and coding efficiency.
+      </p>
+      <button class="mt-6 px-6 py-2 bg-gradient-to-r from-purple-500 to-blue-400 text-white rounded-full text-sm font-semibold uppercase tracking-wide hover:scale-105 transition-transform duration-300">Register Now</button>
+    </div>
+
+    <!-- Main Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Event Info -->
+      <div class="bg-gradient-to-r from-[#0f172a] to-[#1e293b] rounded-xl p-6 border border-[#334155] shadow hover:shadow-sky-700 transition duration-500">
+        <h2 class="text-2xl font-semibold text-purple-400 mb-4">Event Information</h2>
+        <p><span class="text-sky-400 font-semibold">Duration:</span> <span class="text-gray-300">3 hours</span></p>
+        <p class="mt-2"><span class="text-sky-400 font-semibold">Team Size:</span> <span class="text-gray-300">Individual or Team of 2</span></p>
+        <p class="mt-2"><span class="text-sky-400 font-semibold">Venue:</span> <span class="text-gray-300">Computer Lab A, Block 1</span></p>
+      </div>
+
+      <!-- Rules & Regulations -->
+      <div class="bg-gradient-to-r from-[#0f172a] to-[#1e293b] rounded-xl p-6 border border-[#334155] shadow hover:shadow-sky-700 transition duration-500">
+        <h2 class="text-2xl font-semibold text-purple-400 mb-4">Rules & Regulations</h2>
+        <ul class="list-decimal list-inside space-y-2 text-gray-300">
+          <li>Participants can use any programming language of their choice</li>
+          <li>Internet access will be provided for documentation purposes only</li>
+          <li>Code must be original and written during the competition</li>
+          <li>Plagiarism will result in immediate disqualification</li>
+          <li>Judging will be based on correctness, efficiency, and code quality</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Guidelines -->
+    <div class="bg-gradient-to-r from-[#0f172a] to-[#1e293b] rounded-xl p-6 mt-10 border border-[#334155] shadow hover:shadow-purple-700 transition duration-500">
+      <h2 class="text-2xl font-semibold text-purple-400 mb-4">Guidelines</h2>
+      <ul class="list-disc list-inside space-y-2 text-gray-300">
+        <li>Bring your own laptop with preferred IDE/editor installed</li>
+        <li>Ensure your system has necessary compilers/interpreters</li>
+        <li>Arrive 30 minutes before the event for setup</li>
+        <li>Valid college ID is mandatory for participation</li>
+      </ul>
+    </div>
+
+    <!-- Event Heads & Sub Heads -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
+      <!-- Event Heads -->
+      <div class="bg-gradient-to-r from-[#0f172a] to-[#1e293b] rounded-xl p-6 border border-[#334155] shadow hover:shadow-blue-700 transition duration-500">
+        <h2 class="text-2xl font-semibold text-purple-400 mb-4">Event Heads</h2>
+        <div class="bg-[#1e293b] p-4 rounded-lg mb-4 hover:bg-[#334155] transition duration-300">
+          <p class="font-bold text-white">Rahul Sharma</p>
+          <p class="text-sm text-blue-300">rahul.sharma@example.com</p>
+          <p class="text-sm text-blue-300">+91 98765 43210</p>
+        </div>
+        <div class="bg-[#1e293b] p-4 rounded-lg hover:bg-[#334155] transition duration-300">
+          <p class="font-bold text-white">Priya Gupta</p>
+          <p class="text-sm text-blue-300">priya.gupta@example.com</p>
+          <p class="text-sm text-blue-300">+91 98765 43211</p>
+        </div>
+      </div>
+
+      <!-- Sub Heads -->
+      <div class="bg-gradient-to-r from-[#0f172a] to-[#1e293b] rounded-xl p-6 border border-[#334155] shadow hover:shadow-blue-700 transition duration-500">
+        <h2 class="text-2xl font-semibold text-purple-400 mb-4">Sub Heads</h2>
+        <div class="bg-[#1e293b] p-4 rounded-lg mb-4 hover:bg-[#334155] transition duration-300">
+          <p class="font-bold text-white">Amit Kumar</p>
+          <p class="text-sm text-blue-300">amit.kumar@example.com</p>
+          <p class="text-sm text-blue-300">+91 98765 43212</p>
+        </div>
+        <div class="bg-[#1e293b] p-4 rounded-lg hover:bg-[#334155] transition duration-300">
+          <p class="font-bold text-white">Sneha Patel</p>
+          <p class="text-sm text-blue-300">sneha.patel@example.com</p>
+          <p class="text-sm text-blue-300">+91 98765 43213</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
