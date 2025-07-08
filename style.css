@@ -314,3 +314,16 @@ nav a:hover {
   .delay-500 {
     animation-delay: 0.5s;
   }
+.location-icon {
+  background: url('location.svg') no-repeat center center;
+  background-size: contain;
+  width: 24px;
+  height: 24px;
+}
+
+.mail-icon {
+  background: url('mail.svg') no-repeat center;
+  background-size: contain;
+  width: 24px;
+  height: 24px;
+}
