@@ -272,3 +272,12 @@
   .delay-500 {
     animation-delay: 0.5s;
   }
+.gradient-wrapper {
+  background: linear-gradient(to bottom right, #000000 80%, #481e68 100%);
+  background-size: 100% 700%; /* 7 sections = 700% height */
+}
+
+.gradient-wrapper section {
+  height: 100vh; /* or however tall each section is */
+  background: transparent; /* let gradient show through */
+}
