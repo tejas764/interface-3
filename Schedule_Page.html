@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Fest Schedule - INTERFACE 2025</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    .orbitron { font-family: 'Orbitron', sans-serif; }
+    .fade-in {
+      animation: fadeInUp 1s ease-out forwards;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-gray-900 via-purple-900 to-black text-white min-h-screen font-sans">
+  <div class="container mx-auto px-4 py-10">
+    <div class="text-center mb-10 fade-in">
+      <h1 class="text-5xl orbitron font-extrabold text-blue-400">INTERFACE 2025</h1>
+      <p class="text-2xl orbitron text-white">2025–2026</p>
+      <p class="text-md orbitron text-blue-300 mt-2">National Level Intercollegiate IT Fest</p>
+    </div>
+
+    <div class="flex justify-center mb-6 fade-in">
+      <input 
+        id="searchInput"
+        type="text"
+        placeholder="Search by Event Name, Venue or Category..."
+        class="w-full sm:w-1/2 px-4 py-2 rounded-xl border border-purple-600 bg-gray-900 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+        onkeyup="searchTable()"
+      />
+    </div>
+
+    <div class="overflow-x-auto rounded-xl shadow-2xl fade-in">
+      <table id="scheduleTable" class="min-w-full table-auto text-sm sm:text-base">
+        <thead class="bg-purple-800 text-white uppercase text-sm">
+          <tr>
+            <th class="px-6 py-4 text-left">Sl</th>
+            <th class="px-6 py-4 text-left">Event Name</th>
+            <th class="px-6 py-4 text-left">Venue</th>
+            <th class="px-6 py-4 text-left">Timings</th>
+            <th class="px-6 py-4 text-left">Category</th>
+            <th class="px-6 py-4 text-left">Event Head / Contact</th>
+          </tr>
+        </thead>
+        <tbody class="bg-gray-800 divide-y divide-gray-700" id="eventBody"></tbody>
+      </table>
+    </div>
+
+    <p class="text-center text-gray-400 mt-10 fade-in text-sm">*Contact your department coordinator for last-minute changes*</p>
+  </div>
+
+  <script>
+    const sheetURL = "https://opensheet.elk.sh/1OaJuwUlQfueSO4NtTCayQwIY29-sSPdBkLOgk0EO8SA/Sheet1";
+
+    fetch(sheetURL)
+      .then(res => res.json())
+      .then(data => {
+        const tableBody = document.getElementById("eventBody");
+        tableBody.innerHTML = "";
+
+        data.forEach(row => {
+          if (row["Sl"]) {
+            const tr = document.createElement("tr");
+            tr.className = "hover:bg-purple-700 transition duration-300";
+            tr.innerHTML = `
+              <td class="px-6 py-4">${row["Sl"]}</td>
+              <td class="px-6 py-4">${row["Event Name"]}</td>
+              <td class="px-6 py-4">${row["Venue"]}</td>
+              <td class="px-6 py-4">${row["Timings"]}</td>
+              <td class="px-6 py-4">${row["Category"]}</td>
+              <td class="px-6 py-4">${row["Event Head / Contact"]}</td>
+            `;
+            tableBody.appendChild(tr);
+          }
+        });
+      });
+
+    function searchTable() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const rows = document.querySelectorAll("#scheduleTable tbody tr");
+
+      rows.forEach(row => {
+        const text = row.textContent.toLowerCase();
+        row.style.display = text.includes(input) ? "" : "none";
+      });
+    }
+  </script>
+</body>
+</html>
