@@ -17,136 +17,138 @@
         <link rel="stylesheet" href="style.css">
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="https://unpkg.com/lucide@latest"></script>
-
-  <!-- Optional: Customize Tailwind config -->
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            blue: {
-              500: '#3B82F6',
-            },
-            purple: {
-              400: '#C084FC',
-              600: '#9333EA',
-              900: '#581C87',
-            },
-          }
-        }
-      }
-    }
-  </script>
+        <!-- Optional: Customize Tailwind config -->
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            blue: {
+                                500: '#3B82F6',
+                            },
+                            purple: {
+                                400: '#C084FC',
+                                600: '#9333EA',
+                                900: '#581C87',
+                            },
+                        }
+                    }
+                }
+            }
+        </script>
     </head>
     <body>
-      <header>
-<div class="logo">INTERFACE 2025</div>
-<nav>
-  <a href="#">HOME</a>
-  <a href="#about-section">ABOUT US</a>
-  <a href="#Events">EVENTS</a>
-  <a href="results.html">RESULTS</a>  
-  <a href="Schedule_Page.html">SCHEDULE</a>
+        <header>
+            <div class="logo">INTERFACE 2025</div>
+            <nav class="nav-items">
+                <a href="#">HOME</a>
+                <a href="#about-section">ABOUT US</a>
+                <a href="#Events">EVENTS</a>
+                <a href="results.html">RESULTS</a>  
+                <a href="Schedule_Page.html">SCHEDULE</a>
 
-  <!-- Dropdown Container -->
-  <div class="dropdown">
-    <a href="#">MORE ▾</a>
-    <div class="dropdown-content">
-      <a href="#register">REGISTER</a>
-      <a href="#contact">CONTACT</a>
-        <a href="#Team">TEAM</a>
-      <!-- Add more links as needed -->
-    </div>
-  </div>
-</nav>
-      </header>
-
-      <section id="home" class="min-h-screen text-white flex flex-col items-center justify-center text-center px-6"   style="background-image: linear-gradient(rgba(0, 0, 0, 0.185), rgba(0, 0, 0, 0.5)), url('assests/output1.gif'); background-size: cover; background-position: center; background-repeat: no-repeat;"> 
-        <h2 class="text-[4rem] md:text-[5rem] font-extrabold tracking-wide bg-gradient-to-r from-[#8a6cff] to-[#46aee5] text-transparent bg-clip-text font-tech mb-2">INTERFACE 2025</h2>
-        <p class="text-3xl md:text-4xl font-bold text-white mb-4 tracking-wider">2025–2026</p>
-        <p class="text-lg md:text-xl text-[#46aee5] font-semibold mb-2">National Level Intercollegiate IT Fest</p>
-        <p class="text-xl md:text-2xl text-[#b469db] font-semibold mb-6">August 23, 2025</p>
-        <p class="text-sm md:text-base text-gray-300">Hosted by the Department of Computer Science</p>
-        <p class="text-sm md:text-base text-[#b469db] mb-8">Christ (Deemed to be University), Bangalore</p>
-        <div class="flex gap-4 flex-wrap justify-center">
-          <a href="#" class="bg-gradient-to-r from-purple-500 to-blue-400 hover:from-purple-600 hover:to-blue-500 text-white font-bold py-3 px-6 rounded-full shadow-xl transition-all duration-300">REGISTER NOW</a>
-          <a href="#" class="bg-[#46aee5] hover:bg-[#349ed0] text-white font-bold py-3 px-6 rounded-full shadow-xl transition-all duration-300">DOWNLOAD BROCHURE</a>
-        </div>
-      </section>
-      <!-- Orbitron (Tech style) -->
-      <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
-
-<section class="about-section  py-20 px-6 text-white" style="background-image: linear-gradient(to top, #481e68, #000000 70%);" id="about-section">
-        <h1 class="about-title">ABOUT US</h1>
-        <p class="about-subtitle">Discover the legacy and vision behind INTERFACE 2025-2026</p>
-        <div class="slider-container" >
-
-          <div class="slider" id="slider">
-            <div class="about-card">
-              <h2>CHRIST (DEEMED TO BE UNIVERSITY)</h2>
-              <h3>Excellence in Education Since 1969</h3><br>
-
-              <!-- Wrap the image in a flex container -->
-              <div style="display: flex; justify-content: center; align-items: center;">
-                <img src="assests/christ university.jpg" style="width: 500px; height: 250px; border-radius: 15px;" alt="">
-              </div>
-              <p>
-                CHRIST (Deemed to be University) is a premier educational institution in Bangalore, known
-                for its academic excellence and innovative approach to education. With a commitment to
-                holistic development, the university has been at the forefront of technological advancement
-                and research.
-              </p>
-              </div>
-              <div class="about-card">
-                <h2>Department of Computer Science</h2>
-                <h3>Innovation Through Technology</h3><br>
-          <!-- Wrap the image in a flex container -->
-              <div style="display: flex; justify-content: center; align-items: center;">
-                <img src="assests/CS.jpg" style="width: 500px; height: 250px; border-radius: 15px;"  alt="">
-              </div>
-              <p>
-                The department fosters an environment of intellectual curiosity and practical learning. It hosts
-                various national and international events to encourage student growth, with cutting-edge labs,
-                experienced faculty, and active industry partnerships.
-              </p>
+                <!-- Dropdown Container -->
+                <div class="dropdown">
+                    <a href="#">MORE ▾</a>
+                    <div class="dropdown-content">
+                        <a href="#register">REGISTER</a>
+                        <a href="#contact">CONTACT</a>
+                        <a href="#Team">TEAM</a>
+                        <!-- Add more links as needed -->
+                    </div>
+                </div>
+            </nav>
+            <div class="hamburger-menu">
+                <a href="#">HOME</a>
+                <a href="#about-section">ABOUT US</a>
+                <a href="#Events">EVENTS</a>
+                <a href="results.html">RESULTS</a>  
+                <a href="Schedule_Page.html">SCHEDULE</a>
+                <a href="#register">REGISTER</a>
+                <a href="#contact">CONTACT</a>
+                <a href="#Team">TEAM</a>
             </div>
-            <div class="about-card">
-              <h2>INTERFACE Fest Legacy</h2>
-              <h3>Celebrating Tech & Talent</h3><br>
-              <div style="display: flex; justify-content: center; align-items: center;"><br>
-                <img src="assests/CS.jpg" style="width: 500px; height: 250px; border-radius: 15px;"  alt="">
-              </div>
-              <p>
-                INTERFACE has been a hallmark event for decades, showcasing student brilliance in IT and allied
-                fields. From coding competitions to design challenges, it brings together talent from across India
-                in a spirit of healthy competition and innovation.
-              </p>
-            </div>
+            <i class="fa-solid fa-bars hamburger-menu-toggle"></i>
+        </header>
 
-        </div>
-      </section>
+        <section id="home" class="min-h-screen text-white flex flex-col items-center justify-center text-center px-6"   style="background-image: linear-gradient(rgba(0, 0, 0, 0.185), rgba(0, 0, 0, 0.5)), url('assests/output1.gif'); background-size: cover; background-position: center; background-repeat: no-repeat;"> 
+            <h2 class="text-[4rem] md:text-[5rem] font-extrabold tracking-wide bg-gradient-to-r from-[#8a6cff] to-[#46aee5] text-transparent bg-clip-text font-tech mb-2">INTERFACE 2025</h2>
+            <p class="text-3xl md:text-4xl font-bold text-white mb-4 tracking-wider">2025–2026</p>
+            <p class="text-lg md:text-xl text-[#46aee5] font-semibold mb-2">National Level Intercollegiate IT Fest</p>
+            <p class="text-xl md:text-2xl text-[#b469db] font-semibold mb-6">August 23, 2025</p>
+            <p class="text-sm md:text-base text-gray-300">Hosted by the Department of Computer Science</p>
+            <p class="text-sm md:text-base text-[#b469db] mb-8">Christ (Deemed to be University), Bangalore</p>
+            <div class="flex gap-4 flex-wrap justify-center">
+                <a href="#" class="bg-gradient-to-r from-purple-500 to-blue-400 hover:from-purple-600 hover:to-blue-500 text-white font-bold py-3 px-6 rounded-full shadow-xl transition-all duration-300">REGISTER NOW</a>
+                <a href="#" class="bg-[#46aee5] hover:bg-[#349ed0] text-white font-bold py-3 px-6 rounded-full shadow-xl transition-all duration-300">DOWNLOAD BROCHURE</a>
+            </div>
+        </section>
+        <!-- Orbitron (Tech style) -->
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
+        <section class="about-section  py-20 px-6 text-white" style="background-image: linear-gradient(to top, #481e68, #000000 70%);" id="about-section">
+            <h1 class="about-title">ABOUT US</h1>
+            <p class="about-subtitle">Discover the legacy and vision behind INTERFACE 2025-2026</p>
+            <div class="slider-container">
+                <div class="slider" id="slider">
+                    <div class="about-card">
+                        <h2>CHRIST (DEEMED TO BE UNIVERSITY)</h2>
+                        <h3>Excellence in Education Since 1969</h3><br>
+                        <!-- Wrap the image in a flex container -->
+                        <div style="display: flex; justify-content: center; align-items: center;">
+                            <img src="assests/christ university.jpg" style="width: 500px; height: 250px; border-radius: 15px;" alt="">
+                        </div>
+                        <p>
+                            CHRIST (Deemed to be University) is a premier educational institution in Bangalore, known
+                            for its academic excellence and innovative approach to education. With a commitment to
+                            holistic development, the university has been at the forefront of technological advancement
+                            and research.
+                        </p>
+                    </div>
+                    <div class="about-card">
+                        <h2>Department of Computer Science</h2>
+                        <h3>Innovation Through Technology</h3><br>
+                        <!-- Wrap the image in a flex container -->
+                        <div style="display: flex; justify-content: center; align-items: center;">
+                            <img src="assests/CS.jpg" style="width: 500px; height: 250px; border-radius: 15px;"  alt="">
+                        </div>
+                        <p>
+                            The department fosters an environment of intellectual curiosity and practical learning. It hosts
+                            various national and international events to encourage student growth, with cutting-edge labs,
+                            experienced faculty, and active industry partnerships.
+                        </p>
+                    </div>
+                    <div class="about-card">
+                        <h2>INTERFACE Fest Legacy</h2>
+                        <h3>Celebrating Tech & Talent</h3><br>
+                        <div style="display: flex; justify-content: center; align-items: center;"><br>
+                            <img src="assests/CS.jpg" style="width: 500px; height: 250px; border-radius: 15px;" alt="">
+                        </div>
+                        <p>
+                            INTERFACE has been a hallmark event for decades, showcasing student brilliance in IT and allied
+                            fields. From coding competitions to design challenges, it brings together talent from across India
+                            in a spirit of healthy competition and innovation.
+                        </p>
+                    </div>
+                </div>
+            </section>
   
-        <script>
-        const slider = document.getElementById('slider');
-        const slideCount = slider.children.length;
-        let currentIndex = 0;
+            <script>
+                const slider = document.getElementById('slider');
+                const slideCount = slider.children.length;
+                let currentIndex = 0;
 
-        setInterval(() => {
-          currentIndex = (currentIndex + 1) % slideCount;
-          slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-        }, 3000); // 7 seconds
-      </script>
-
-      <script src="script.js"></script>
-        <!-- EVENTS HEADER -->
+                setInterval(() => {
+                currentIndex = (currentIndex + 1) % slideCount;
+                slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+                }, 3000); // 7 seconds
+            </script>
 
 
-
-
-
-        <section class="text-center py-16 text-white"  style="background-image: linear-gradient(to bottom, #481e68, #000000 70%);" id="Events">
-          <br><br> <h2 class="text-6xl font-bold text-blue-500 hover:text-yellow-400 hover:drop-shadow-[0_0_15px_rgba(255,255,0,0.8)] transition-all duration-300">EVENTS</h2><br>
-          <p class="text-gray-400 mt-2">Choose Your Challenge • Prove Your Skills • Claim Victory</p>
+            <!-- EVENTS HEADER -->
+            <section class="text-center py-16 text-white"  style="background-image: linear-gradient(to bottom, #481e68, #000000 70%);" id="Events">
+                <br><br> <h2 class="text-6xl font-bold text-blue-500 hover:text-yellow-400 hover:drop-shadow-[0_0_15px_rgba(255,255,0,0.8)] transition-all duration-300">EVENTS</h2><br>
+                <p class="text-gray-400 mt-2">Choose Your Challenge • Prove Your Skills • Claim Victory</p>
       
     <!-- TECHNICAL EVENTS -->
       <section class="text-center">
@@ -502,5 +504,6 @@
 </footer>
 
     
-</body>
+        <script src="./script.js"></script>
+    </body>
 </html>
