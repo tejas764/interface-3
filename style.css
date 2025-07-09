@@ -12,11 +12,16 @@
     }
 
     header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 30px;
-      background-color: #000;
+        display: flex;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        height: 60px;
+        width: 100vw;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 30px;
+        background-color: #000;
     }
 
     .logo {
@@ -326,4 +331,50 @@ nav a:hover {
   background-size: contain;
   width: 24px;
   height: 24px;
+}
+.hamburger-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0px;
+    height: 100vh;
+    padding: 20px 20px 0px;
+    transform: translateX(100%);
+    background-color: #00000077;
+    transition: transform 0.3s;
+}
+
+.hamburger-menu > a {
+    display: block;
+    font-size: 28px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.hamburger-menu > a:hover {
+  color: #8abaff;
+  transform: scale(1.1);
+}
+
+.hamburger-menu-toggle {
+    display: none;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size: 40px;
+    padding: 10px;
+}
+
+@media only screen and (max-width: 880px) {
+    .nav-items {
+        display: none;
+    }
+    .hamburger-menu {
+        display: unset;
+    }
+    .hamburger-menu.show {
+        transform: translateX(0px);
+    }
+    .hamburger-menu-toggle {
+        display: unset;
+    }
 }
