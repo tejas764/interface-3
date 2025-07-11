@@ -89,127 +89,110 @@
         <section class="about-section  py-20 px-6 text-white" style="background-image: linear-gradient(to top, #481e68, #000000 70%);" id="about-section">
             <h1 class="about-title">ABOUT US</h1>
             <p class="about-subtitle">Discover the legacy and vision behind INTERFACE 2025-2026</p>
-            <div class="slider-container">
-                <div class="slider" id="slider">
-                    <div class="about-card">
-                        <h2>CHRIST (DEEMED TO BE UNIVERSITY)</h2>
-                        <h3>Excellence in Education Since 1969</h3><br>
-                        <!-- Wrap the image in a flex container -->
-                        <div style="display: flex; justify-content: center; align-items: center;">
-                            <img src="assests/christ university.jpg" style="width: 500px; height: 250px; border-radius: 15px;" alt="">
-                        </div>
-                        <p>
-                            CHRIST (Deemed to be University) is a premier educational institution in Bangalore, known
-                            for its academic excellence and innovative approach to education. With a commitment to
-                            holistic development, the university has been at the forefront of technological advancement
-                            and research.
-                        </p>
-                    </div>
-                    <div class="about-card">
-                        <h2>Department of Computer Science</h2>
-                        <h3>Innovation Through Technology</h3><br>
-                        <!-- Wrap the image in a flex container -->
-                        <div style="display: flex; justify-content: center; align-items: center;">
-                            <img src="assests/CS.jpg" style="width: 500px; height: 250px; border-radius: 15px;"  alt="">
-                        </div>
-                        <p>
-                            The department fosters an environment of intellectual curiosity and practical learning. It hosts
-                            various national and international events to encourage student growth, with cutting-edge labs,
-                            experienced faculty, and active industry partnerships.
-                        </p>
-                    </div>
-                    <div class="about-card">
-                        <h2>INTERFACE Fest Legacy</h2>
-                        <h3>Celebrating Tech & Talent</h3><br>
-                        <div style="display: flex; justify-content: center; align-items: center;"><br>
-                            <img src="assests/CS.jpg" style="width: 500px; height: 250px; border-radius: 15px;" alt="">
-                        </div>
-                        <p>
-                            INTERFACE has been a hallmark event for decades, showcasing student brilliance in IT and allied
-                            fields. From coding competitions to design challenges, it brings together talent from across India
-                            in a spirit of healthy competition and innovation.
-                        </p>
-                    </div>
-                </div>
-            </section>
-  
-            <script>
-                const slider = document.getElementById('slider');
-                const slideCount = slider.children.length;
-                let currentIndex = 0;
-
-                setInterval(() => {
-                currentIndex = (currentIndex + 1) % slideCount;
-                slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-                }, 3000); // 7 seconds
-            </script>
-
+            <div class="about-carousel">
+                <div class="about-carousel-items">
+                	<div class="about-carousel-item">
+                    	<h2>CHRIST (DEEMED TO BE UNIVERSITY)</h2>
+                    	<h3>Excellence in Education Since 1969</h3>
+						<img src="./assests/christ university.jpg">
+						<p>
+                        	CHRIST (Deemed to be University) is a premier educational institution in Bangalore, known
+                          	for its academic excellence and innovative approach to education. With a commitment to
+                          	holistic development, the university has been at the forefront of technological advancement
+                          	and research.
+                      	</p>
+					</div>
+					<div class="about-carousel-item">
+						<h2>Department of Computer Science</h2>
+						<h3>Innovation Through Technology</h3>
+						<img src="./assests/CS.jpg">
+						<p>
+							The department fosters an environment of intellectual curiosity and practical learning. It hosts
+							various national and international events to encourage student growth, with cutting-edge labs,
+							experienced faculty, and active industry partnerships.
+						</p>
+                  	</div>
+					<div class="about-carousel-item">
+						<h2>INTERFACE Fest Legacy</h2>
+						<h3>Celebrating Tech & Talent</h3>
+						<img src="./assests/CS.jpg">
+						<p>
+							INTERFACE has been a hallmark event for decades, showcasing student brilliance in IT and allied
+							fields. From coding competitions to design challenges, it brings together talent from across India
+							in a spirit of healthy competition and innovation.
+						</p>
+					</div>
+              	</div>
+          	</div>
+        </section>
 
             <!-- EVENTS HEADER -->
             <section class="text-center py-16 text-white"  style="background-image: linear-gradient(to bottom, #481e68, #000000 70%);" id="Events">
                 <br><br> <h2 class="text-6xl font-bold text-blue-500 hover:text-yellow-400 hover:drop-shadow-[0_0_15px_rgba(255,255,0,0.8)] transition-all duration-300">EVENTS</h2><br>
                 <p class="text-gray-400 mt-2">Choose Your Challenge • Prove Your Skills • Claim Victory</p>
       
-    <!-- TECHNICAL EVENTS -->
-      <section class="text-center">
-        <h3 class="text-3xl font-bold text-purple-400 mb-8">TECHNICAL EVENTS</h3>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
-        <!-- Code Quest -->
-          <div class="custom-hover-card bg-gradient-to-br from-purple-900 to-purple-600 rounded-xl p-6 hover:scale-105 transition-transform shadow-lg">
-  <!-- Content here -->
-        <div class="text-purple-300 mb-4">
-          <i data-lucide="code" class="w-12 h-12 mx-auto"></i>
-        </div>
-        <h4 class="text-xl font-bold text-purple-200">Code Quest</h4>
-        <p class="text-purple-100 mt-2 text-sm">Ultimate programming competition testing your coding skills across multiple languages and frameworks</p>
-        <a href="code.html"><button class="mt-4 px-6 py-2 rounded-lg bg-gradient-to-r from-purple-700 to-blue-500 text-white font-semibold hover:opacity-90">LEARN MORE</button></a>
-      </div>
+            <!-- TECHNICAL EVENTS -->
+            <section class="text-center">
+                <h3 class="text-3xl font-bold text-purple-400 mb-8">TECHNICAL EVENTS</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
+                    <!-- Code Quest -->
+                    <div class="custom-hover-card bg-gradient-to-br from-purple-900 to-purple-600 rounded-xl p-6 hover:scale-105 transition-transform shadow-lg">
+                        <!-- Content here -->
+                        <div class="text-purple-300 mb-4">
+                            <i data-lucide="code" class="w-12 h-12 mx-auto"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-purple-200">Code Quest</h4>
+                        <p class="text-purple-100 mt-2 text-sm">Ultimate programming competition testing your coding skills across multiple languages and frameworks</p>
+                        <a href="code.html">
+                            <button class="mt-4 px-6 py-2 rounded-lg bg-gradient-to-r from-purple-700 to-blue-500 text-white font-semibold hover:opacity-90">LEARN MORE</button>
+                        </a>
+                    </div>
 
-      <!-- Web Warriors -->
-      <div class="custom-hover-card-1 bg-gradient-to-br from-purple-900 to-purple-600 rounded-xl p-6 hover:scale-105 transition-transform shadow-lg">
-        <div class="text-purple-300 mb-4">
-          <i data-lucide="globe" class="w-12 h-12 mx-auto"></i>
-        </div>
-        <h4 class="text-xl font-bold text-purple-200">Web Warriors</h4>
-        <p class="text-purple-100 mt-2 text-sm">Design and develop stunning web applications using modern technologies</p>
-        <button class="mt-4 px-6 py-2 rounded-lg bg-gradient-to-r from-purple-700 to-blue-500 text-white font-semibold hover:opacity-90">LEARN MORE</button>
-      </div>
+                    <!-- Web Warriors -->
+                    <div class="custom-hover-card-1 bg-gradient-to-br from-purple-900 to-purple-600 rounded-xl p-6 hover:scale-105 transition-transform shadow-lg">
+                        <div class="text-purple-300 mb-4">
+                            <i data-lucide="globe" class="w-12 h-12 mx-auto"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-purple-200">Web Warriors</h4>
+                        <p class="text-purple-100 mt-2 text-sm">Design and develop stunning web applications using modern technologies</p>
+                        <button class="mt-4 px-6 py-2 rounded-lg bg-gradient-to-r from-purple-700 to-blue-500 text-white font-semibold hover:opacity-90">LEARN MORE</button>
+                    </div>
 
-      <!-- AI Innovation -->
-      <div class="custom-hover-card-2 bg-gradient-to-br from-purple-900 to-purple-600 rounded-xl p-6 hover:scale-105 transition-transform shadow-lg">
-        <div class="text-blue-400 mb-4">
-          <i data-lucide="brain-circuit" class="w-12 h-12 mx-auto"></i>
-        </div>
-        <h4 class="text-xl font-bold text-blue-300">AI Innovation</h4>
-        <p class="text-blue-100 mt-2 text-sm">Showcase your machine learning and AI projects to revolutionize the future</p>
-        <button class="mt-4 px-6 py-2 rounded-lg bg-gradient-to-r from-purple-700 to-blue-500 text-white font-semibold hover:opacity-90">LEARN MORE</button>
-      </div>
-    </div>
-  </section>
+                    <!-- AI Innovation -->
+                    <div class="custom-hover-card-2 bg-gradient-to-br from-purple-900 to-purple-600 rounded-xl p-6 hover:scale-105 transition-transform shadow-lg">
+                        <div class="text-blue-400 mb-4">
+                            <i data-lucide="brain-circuit" class="w-12 h-12 mx-auto"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-blue-300">AI Innovation</h4>
+                        <p class="text-blue-100 mt-2 text-sm">Showcase your machine learning and AI projects to revolutionize the future</p>
+                        <button class="mt-4 px-6 py-2 rounded-lg bg-gradient-to-r from-purple-700 to-blue-500 text-white font-semibold hover:opacity-90">LEARN MORE</button>
+                    </div>
+                </div>
+            </section>
 
-  <!-- NON-TECHNICAL EVENTS -->
-  <section class="text-center mt-20">
-    <h3 class="text-3xl font-bold text-purple-400 mb-8">NON-TECHNICAL EVENTS</h3>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
-      <!-- Tech Talk -->
-      <div class="bg-gradient-to-br from-purple-900 to-purple-600 rounded-xl p-6 hover:scale-105 transition-transform shadow-lg">
-        <div class="text-purple-300 mb-4">
-          <i data-lucide="mic" class="w-12 h-12 mx-auto"></i>
-        </div>
-        <h4 class="text-xl font-bold text-purple-200">Tech Talk</h4>
-        <p class="text-purple-100 mt-2 text-sm">Present your ideas and insights on emerging technologies and industry trends</p>
-        <button class="mt-4 px-6 py-2 rounded-lg bg-gradient-to-r from-purple-700 to-blue-500 text-white font-semibold hover:opacity-90">LEARN MORE</button>
-      </div>
+            <!-- NON-TECHNICAL EVENTS -->
+            <section class="text-center mt-20">
+                <h3 class="text-3xl font-bold text-purple-400 mb-8">NON-TECHNICAL EVENTS</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
+                <!-- Tech Talk -->
+                <div class="bg-gradient-to-br from-purple-900 to-purple-600 rounded-xl p-6 hover:scale-105 transition-transform shadow-lg">
+                    <div class="text-purple-300 mb-4">
+                        <i data-lucide="mic" class="w-12 h-12 mx-auto"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-purple-200">Tech Talk</h4>
+                    <p class="text-purple-100 mt-2 text-sm">Present your ideas and insights on emerging technologies and industry trends</p>
+                    <button class="mt-4 px-6 py-2 rounded-lg bg-gradient-to-r from-purple-700 to-blue-500 text-white font-semibold hover:opacity-90">LEARN MORE</button>
+                </div>
 
-      <!-- Digital Art Showcase -->
-      <div class="bg-gradient-to-br from-purple-900 to-purple-600 rounded-xl p-6 hover:scale-105 transition-transform shadow-lg">
-        <div class="text-purple-300 mb-4">
-          <i data-lucide="palette" class="w-12 h-12 mx-auto"></i>
-        </div>
-        <h4 class="text-xl font-bold text-purple-200">Digital Art Showcase</h4>
-        <p class="text-purple-100 mt-2 text-sm">Express creativity through digital mediums and showcase your artistic vision</p>
-        <button class="mt-4 px-6 py-2 rounded-lg bg-gradient-to-r from-purple-700 to-blue-500 text-white font-semibold hover:opacity-90">LEARN MORE</button>
-      </div>
+            <!-- Digital Art Showcase -->
+            <div class="bg-gradient-to-br from-purple-900 to-purple-600 rounded-xl p-6 hover:scale-105 transition-transform shadow-lg">
+                <div class="text-purple-300 mb-4">
+                    <i data-lucide="palette" class="w-12 h-12 mx-auto"></i>
+                </div>
+                <h4 class="text-xl font-bold text-purple-200">Digital Art Showcase</h4>
+                <p class="text-purple-100 mt-2 text-sm">Express creativity through digital mediums and showcase your artistic vision</p>
+                <button class="mt-4 px-6 py-2 rounded-lg bg-gradient-to-r from-purple-700 to-blue-500 text-white font-semibold hover:opacity-90">LEARN MORE</button>
+            </div>
 
       <!-- Tech Quiz -->
       <div class="bg-gradient-to-br from-purple-900 to-purple-600 rounded-xl p-6 hover:scale-105 transition-transform shadow-lg">
@@ -416,16 +399,16 @@
 
       <div class="space-y-4">
         <!-- Instagram -->
-        <div class="bg-[#18122B]/60 p-4 rounded-lg hover:bg-[#2c1c4a]/80 transition duration-300">
+        <div class="bg-[#18122B]/60 p-4 rounded-lg hover:bg-[#2c1c4a]/80 transition duration-300" style="margin-bottom: 16px;">
           <p class="font-semibold">Instagram</p>
           <p class="text-sm text-gray-300 font-sans">@interface_christ</p>
         </div>
 
         <!-- LinkedIn -->
-        <div class="bg-[#18122B]/60 p-4 rounded-lg hover:bg-[#2c1c4a]/80 transition duration-300">
+        <div class="bg-[#18122B]/60 p-4 rounded-lg hover:bg-[#2c1c4a]/80 transition duration-300" style="margin-bottom: 16px; margin-top: 0px;">
           <p class="font-semibold">LinkedIn</p>
           <p class="text-sm text-gray-300 font-sans">INTERFACE CHRIST University</p>
-        </div><br>
+        </div>
 
         <!-- University Website -->
         <a href="https://christuniversity.in/" target="_blank"><div class="bg-[#18122B]/60 p-4 rounded-lg hover:bg-[#2c1c4a]/80 transition duration-300">
