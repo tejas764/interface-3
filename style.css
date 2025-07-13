@@ -466,3 +466,58 @@ nav a:hover {
         transform: translateX(-66.66%);
     }
 }
+
+.web-devs-section > h3 {
+	color: #38bdf8;
+	font-size: 3rem;
+	width: fit-content;
+	margin: 0 auto 40px;
+}
+
+.web-devs-section > div {
+	display: flex;
+	height: fit-content;
+	width: 100vw;
+	justify-content: center;
+	gap: 24px;
+	flex-wrap: wrap;
+}
+
+.web-devs-card {
+	width: 256px;
+	padding: 24px;
+	background: linear-gradient(#1b1030, #0f1d2a);
+	border-radius: 1rem;
+}
+
+.web-devs-card > img {
+	height: 104px;
+	width: 104px;
+	border-radius: 9999px;
+	margin: 0 auto 24px;
+	border: 4px solid #ab60e9;
+}
+
+.web-devs-card > p {
+	text-align: center;
+	width: 100%;
+	text-wrap: wrap;
+}
+
+.web-devs-card > .web-devs-name {
+	font-size: 1.25rem;
+	font-weight: 600;
+	color: #d1a7ff;
+	margin-bottom: 8px;
+}
+
+.web-devs-card > .web-devs-position {
+	font-size: 16px;
+	font-weight: 500;
+	color: #38bdf8;
+	margin-bottom: 4px;
+}
+
+.web-devs-card > .web-devs-class {
+	font-size: 14px;
+}
