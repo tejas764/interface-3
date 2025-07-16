@@ -3,7 +3,8 @@ const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
 const multer = require('multer');
-const fs = require('fs');
+const { CloudinaryStorage } = require('multer-storage-cloudinary');
+const cloudinary = require('./cloudinary');
 const Registration = require('./models/Registration');
 
 const app = express();
@@ -17,30 +18,25 @@ mongoose.connect(process.env.MONGO_URI, {
 .then(() => console.log('✅ Connected to MongoDB Atlas'))
 .catch(err => console.error('❌ MongoDB connection error:', err));
 
-// ======= Ensure uploads folder exists =======
-if (!fs.existsSync('uploads')) {
-  fs.mkdirSync('uploads');
-}
+// ======= Multer Setup with Cloudinary =======
+const storage = new CloudinaryStorage({
+  cloudinary: cloudinary,
+  params: {
+    folder: 'interface_receipts',
+    allowed_formats: ['jpg', 'jpeg', 'png', 'pdf'],
+    resource_type: 'auto'
+  }
+});
+const upload = multer({ storage });
 
 // ======= Middleware =======
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use('/uploads', express.static('uploads')); // Serve uploaded files
-
-// ======= Multer Setup =======
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => cb(null, 'uploads/'),
-  filename: (req, file, cb) => {
-    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
-    cb(null, uniqueSuffix + '-' + file.originalname);
-  }
-});
-const upload = multer({ storage });
 
 // ======= Routes =======
 
-// Home route (optional)
+// Home route
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'register.html'));
 });
@@ -49,6 +45,7 @@ app.get('/', (req, res) => {
 app.get('/register', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'register.html'));
 });
+
 // Fetch all registrations (admin view)
 app.get('/all', async (req, res) => {
   try {
@@ -66,7 +63,7 @@ app.post('/register', upload.single('receipt'), async (req, res) => {
     const { name, email, contact, institution, state } = req.body;
     const events = req.body['events[]'];
 
-    if (!name || !email || !contact || !institution || !state ) {
+    if (!name || !email || !contact || !institution || !state || !req.file) {
       return res.status(400).send('❌ All fields and receipt upload are required.');
     }
 
@@ -82,7 +79,10 @@ app.post('/register', upload.single('receipt'), async (req, res) => {
       institution,
       state,
       events: Array.isArray(events) ? events : [events],
-      receiptPath:'newpath',
+      receipt: {
+        url: req.file.path,
+        public_id: req.file.filename
+      }
     });
 
     await registration.save();

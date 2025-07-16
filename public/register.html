@@ -76,7 +76,8 @@
           <h1 class="text-center mb-4" style="color: #fff;">🎮 Fest Registration</h1>
 
           
-            <form action="/register" method="POST">
+            <form action="/register" method="POST" enctype="multipart/form-data">
+
 
             <!-- Name -->
             <div class="mb-3">
@@ -120,23 +121,23 @@
             <div class="mb-3">
               <label class="form-label" style="color: #fff;">Events to Participate:</label><br>
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="event1" name="events[1]" value="Coding Challenge">
+                <input type="checkbox" class="form-check-input" id="event1" name="events[]" value="Coding Challenge">
                 <label class="form-check-label" for="event1" style="color: #fff;">Coding Challenge</label>
               </div>
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="event2" name="events[2]" value="Hackathon">
+                <input type="checkbox" class="form-check-input" id="event2" name="events[]" value="Hackathon">
                 <label class="form-check-label" for="event2" style="color: #fff;">Hackathon</label>
               </div>
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="event3" name="events[3]" value="Poster Presentation">
+                <input type="checkbox" class="form-check-input" id="event3" name="events[]" value="Poster Presentation">
                 <label class="form-check-label" for="event3" style="color: #fff;">Poster Presentation</label>
               </div>
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="event4" name="events[4]" value="Quiz Competition">
+                <input type="checkbox" class="form-check-input" id="event4" name="events[]" value="Quiz Competition">
                 <label class="form-check-label" for="event4" style="color: #fff;">Quiz Competition</label>
               </div>
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="event5" name="events[5]" value="Cultural Events">
+                <input type="checkbox" class="form-check-input" id="event5" name="events[]" value="Cultural Events">
                 <label class="form-check-label" for="event5" style="color: #fff;">Cultural Events</label>
               </div>
             </div>
@@ -144,14 +145,14 @@
             <!-- Upload Receipt -->
             <div class="mb-4">
               <label for="receipt" class="form-label" style="color: #fff;">Upload Payment Receipt (Image)</label>
+              <small style="color: #aaa;">(Max: 2MB, JPG/PNG preferred)</small>
               <input type="file" id="receipt" name="receipt" accept="image/*" class="form-control" required>
             </div>
 
             <!-- Submit Button -->
             <div class="d-grid">
-              <button type="submit" class="btn btn-glow">🔥 Let's Boom!</button>
+              <button type="submit" class="btn btn-glow" onclick="this.innerText='Submitting...'; this.disabled=false;">🔥 Let's Boom!</button>
             </div>
-
           </form>
         </div>
       </div>

@@ -7,11 +7,15 @@ const registrationSchema = new mongoose.Schema({
   institution: String,
   state: String,
   events: [String],
-  receiptImage: String,
-  registeredAt: {
+   registeredAt: {
     type: Date,
     default: Date.now
+  },
+  receipt: {
+    url: String,
+    public_id: String
   }
 });
 
 module.exports = mongoose.model('Registration', registrationSchema);
+
