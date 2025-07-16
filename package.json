@@ -5,9 +5,11 @@
     "ejs": "^3.1.10",
     "express": "^5.1.0",
     "express-mailer": "^0.3.1",
+    "mongodb": "^6.17.0",
     "mongoose": "^8.16.3",
     "multer": "^2.0.1",
-    "nodemailer": "^7.0.5"
+    "nodemailer": "^7.0.5",
+    "nodemon": "^3.1.10"
   },
   "name": "interface2025-2",
   "version": "1.0.0",
