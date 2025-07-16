@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Interface 2026 – Admin Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- AOS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
+
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Orbitron', sans-serif;
+      background-color: #0d0d0d;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    #particles-js {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.1);
+      backdrop-filter: blur(14px);
+      border-radius: 15px;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+
+    .search-bar {
+      background-color: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: white;
+      padding: 0.75rem 1rem;
+      border-radius: 10px;
+    }
+
+    .search-bar::placeholder {
+      color: #aaa;
+    }
+
+    .table thead {
+      background-color: #222;
+    }
+
+    .table-dark th,
+    .table-dark td {
+      vertical-align: middle;
+    }
+
+    .table-dark tr:hover {
+      background-color: rgba(0, 255, 255, 0.05);
+    }
+
+    .view-btn {
+      text-decoration: none;
+    }
+
+    .badge {
+      background-color: rgba(0, 255, 255, 0.2);
+      color: #00ffff;
+      border: 1px solid #00ffff;
+      margin: 2px;
+    }
+
+    .navbar {
+      background-color: #111 !important;
+      box-shadow: 0 2px 10px rgba(0, 255, 255, 0.2);
+    }
+
+    .navbar-brand {
+      font-family: 'Orbitron', sans-serif;
+      color: #00ffff !important;
+    }
+  </style>
+</head>
+<body>
+  <div id="particles-js"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><i class="fas fa-user-shield me-2"></i>Interface 2026 Admin</a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container glass-card" data-aos="fade-up">
+    <h2 class="text-center mb-4" data-aos="fade-down"><i class="fas fa-database me-2"></i>Dashboard</h2>
+
+    <input type="text" id="searchBox" class="form-control search-bar mb-4" placeholder="🔍 Search by name, email, institution..." />
+
+    <div class="table-responsive">
+      <table class="table table-dark table-hover text-white align-middle">
+        <thead>
+          <tr>
+            <th><i class="fas fa-user"></i> Name</th>
+            <th><i class="fas fa-envelope"></i> Email</th>
+            <th><i class="fas fa-phone"></i> Contact</th>
+            <th><i class="fas fa-university"></i> Institution</th>
+            <th><i class="fas fa-map-marker-alt"></i> State</th>
+            <th><i class="fas fa-star"></i> Events</th>
+            <th><i class="fas fa-receipt"></i> Receipt</th>
+          </tr>
+        </thead>
+        <tbody id="registrationTableBody">
+          <!-- Data will load here -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Bootstrap & AOS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init();</script>
+
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 70 },
+        "color": { "value": "#00ffff" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.4 },
+        "size": { "value": 3 },
+        "line_linked": {
+          "enable": true,
+          "distance": 120,
+          "color": "#00ffff",
+          "opacity": 0.3,
+          "width": 1
+        },
+        "move": { "enable": true, "speed": 2 }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": { "enable": true, "mode": "grab" },
+          "onclick": { "enable": true, "mode": "push" }
+        }
+      }
+    });
+  </script>
+
+  <!-- Admin Script -->
+  <script>
+    let registrations = [];
+
+    async function fetchRegistrations() {
+      try {
+        const res = await fetch('/all');
+        registrations = await res.json();
+        displayRegistrations(registrations);
+      } catch (err) {
+        alert('❌ Could not fetch registrations');
+        console.error(err);
+      }
+    }
+
+    function displayRegistrations(data) {
+      const tbody = document.getElementById('registrationTableBody');
+      tbody.innerHTML = '';
+
+      data.forEach(reg => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${reg.name}</td>
+          <td>${reg.email}</td>
+          <td>${reg.contact}</td>
+          <td>${reg.institution}</td>
+          <td>${reg.state}</td>
+          <td>
+            ${(reg.events || []).map(event => `<span class="badge">${event}</span>`).join(' ')}
+          </td>
+          <td>
+            ${reg.receipt?.url 
+              ? `<a href="${reg.receipt.url}" class="btn btn-sm btn-outline-info view-btn" target="_blank"><i class="fas fa-eye"></i> View</a>` 
+              : `<span class="text-muted">No Receipt</span>`}
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    document.getElementById('searchBox').addEventListener('input', function () {
+      const query = this.value.toLowerCase();
+      const filtered = registrations.filter(r =>
+        r.name.toLowerCase().includes(query) ||
+        r.email.toLowerCase().includes(query) ||
+        r.institution.toLowerCase().includes(query)
+      );
+      displayRegistrations(filtered);
+    });
+
+    fetchRegistrations();
+  </script>
+</body>
+</html>
