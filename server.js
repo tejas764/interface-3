@@ -57,6 +57,9 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'register.html'));
 });
 
+app.get('/preRegister', adminAuth, (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'preRegister.html'));
+});
 // Registration Form
 app.get('/register', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'register.html'));
