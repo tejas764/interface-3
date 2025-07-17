@@ -38,13 +38,13 @@
     .form-control, .form-select {
       background-color: rgba(0, 0, 0, 0.3);
       border: 1px solid rgba(255, 255, 255, 0.2);
-      color: #07510d;
+      color: #fdffe2;
     }
 
    .form-control:focus, 
 .form-select:focus {
   background-color: rgba(0, 255, 0, 0.1);
-  color: #ffffff;
+  color: #000000;
   border-color: #00ff00;
   box-shadow: 0 0 8px #00ff00;
 }
@@ -58,7 +58,7 @@
     .btn-glow {
       background-color: #00ffff;
       border: none;
-      color: #000;
+      color: #ffffff;
       font-weight: bold;
       transition: all 0.3s ease;
     }
@@ -73,7 +73,7 @@
    <header>
             <div class="logo">INTERFACE 2025</div>
             <nav class="nav-items">
-                <a href="#">HOME</a>
+                <a href="/">HOME</a>
                 <a href="#about-section">ABOUT US</a>
                 <a href="#Events">EVENTS</a>
                 <a href="results.html">RESULTS</a>  
@@ -140,7 +140,7 @@
 
             <!-- State -->
             <div class="mb-3">
-              <label for="state" class="form-label" style="color: #fff;">State</label>
+              <label for="state" class="form-label" style="color: #ffffff;">State</label>
               <select id="state" name="state" class="form-select" required>
                 <option value="">-- Select State --</option>
                 <option value="Maharashtra">Maharashtra</option>
@@ -155,7 +155,7 @@
             <!-- Events -->
             <div class="mb-3">
               <label class="form-label" style="color: #fff;">Events to Participate:</label><br>
-              <div class="form-check">
+              <div class="form-check" aria-required="true">
                 <input type="checkbox" class="form-check-input" id="event1" name="events[]" value="Coding Challenge">
                 <label class="form-check-label" for="event1" style="color: #fff;">Coding Challenge</label>
               </div>
