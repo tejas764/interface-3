@@ -54,12 +54,9 @@ const adminAuth = (req, res, next) => {
 
 // Home route
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'register.html'));
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-app.get('/preRegister', adminAuth, (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'preRegister.html'));
-});
 // Registration Form
 app.get('/register', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'register.html'));
@@ -80,7 +77,9 @@ app.get('/all', adminAuth, async (req, res) => {
     res.status(500).send('Internal Server Error');
   }
 });
-
+app.get('/preRegister',(req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'preRegister.html'));
+});
 // ======= Registration Route =======
 app.post('/register', upload.single('receipt'), async (req, res) => {
   try {
@@ -127,22 +126,35 @@ app.post('/register', upload.single('receipt'), async (req, res) => {
       to: email,
       subject: "✅ Fest Registration Confirmation",
       html: `
-        <h2>Hi ${name}!</h2>
-        <p>🎉 Thank you! Registering for <b>Interface-2025<b>.</p>
-        <p><strong>Institution:</strong> ${institution}</p>
-        <p><strong>State:</strong> ${state}</p>
-        <p><strong>Selected Events:</strong> ${selectedEvents.join(', ')}</p>
-        <br/>
-        <p>We’ve received your payment receipt and your registration is successful. You’ll receive more details soon!</p>
-        <p>For any queiry you can contact our student cordinators through our website</P>
-        <p>Regards,<br/>Fest Organizing Committee</p>
+        <h2>Greetings,${name}!</h2>
+<p>🎉 Your quest begins! Thank you for registering for <b>INTERFACE 2025<b>!</p>
+<p>We're thrilled to have you join us for a year where <i>technology meets entertainment<i>. Get ready to level up your skills!</p>
+<br/>
+<h3>Your Registration Details:</h3>
+<ul>
+  <li><strong>Institution:</strong> ${institution}</li>
+  <li><strong>State:</strong> ${state}</li>
+  <li><strong>Selected Events:</strong> ${selectedEvents.join(', ')}</li>
+</ul>
+<br/>
+<p>We've successfully received your payment receipt and confirmed your registration. Consider this your <b>"Loading Complete"<b> screen!</p>
+<p>Your <strong>WhatsApp group link<strong> will be sent to your registered email </strong>once your details have been verified by our team**. Please allow up to 24 hours for this process.</p>
+<p>You'll receive a detailed email with the **official schedule, event rules, and any specific instructions** for your chosen battles (events) very soon.</p>
+<p>In the meantime, mark your calendars for **August 23, 2025**!</p>
+<p>Keep up with all the action and sneak peeks on our Instagram: **<a href="https://www.instagram.com/interface.2025" style="color: #00ffff; text-decoration: none;" target="_blank">@interface.2025</a>**</p>
+<p>If you have any **side quests or queries**, our student coordinators are ready to assist. Visit our official website's <a href="www.christuniversity.in" style="color: #00ffff; text-decoration: none;">**Contact Us**</a> section for details, or reply directly to this email.</p>
+<br/>
+<p>Prepare for an epic experience!</p>
+<p>Best Regards,<br/>
+ Organizing Committee<br/>
+👾 [interface.christuniversity.in] 👾</p>
       `
     };
 
     await transporter.sendMail(mailOptions);
     console.log(`📧 Email sent to ${email}`);
 
-    res.send(`<h2>✅ Thank you ${name}! Your registration has been saved and confirmation email sent to ${email}.</h2>`);
+    res.redirect('/?registered=success');
 
   } catch (err) {
     console.error('❌ Error during registration:', err);
