@@ -13,55 +13,62 @@
     }
   </style>
 </head>
-<header>
-            <div class="logo">INTERFACE 2025</div>
-            <nav class="nav-items">
-                <a href="#">HOME</a>
-                <a href="#about-section">ABOUT US</a>
-                <a href="#Events">EVENTS</a>
-                <a href="results.html">RESULTS</a>  
-                <a href="Schedule_Page.html">SCHEDULE</a>
+<body class="relative bg-black text-white overflow-x-hidden min-h-screen">
+  <!-- Header -->
+  <header class="flex flex-wrap justify-between items-center p-4 bg-black text-white z-50 relative">
+    <div class="text-2xl font-bold text-cyan-400">INTERFACE 2025</div>
+    
+    <!-- Hamburger Button -->
+    <button id="menu-toggle" class="md:hidden text-white text-3xl">
+      ☰
+    </button>
 
-                
-                <div class="dropdown">
-                    <a href="#">MORE ▾</a>
-                    <div class="dropdown-content">
-                        <a href="#register">REGISTER</a>
-                        <a href="gallery.html">GALLERY</a>
-                        <a href="#contact">CONTACT</a>
-                        <a href="#Team">TEAM</a>
-                        
-                        
-                    </div>
-                </div>
-            </nav>
-            <div class="hamburger-menu">
-                <a href="http://localhost:3000/">HOME</a>
-                <a href="#about-section">ABOUT US</a>
-                <a href="#Events">EVENTS</a>
-                <a href="results.html">RESULTS</a>  
-                <a href="Schedule_Page.html">SCHEDULE</a>
-                <a href="#register">REGISTER</a>
-                <a href="#contact">CONTACT</a>
-                <a href="#Team">TEAM</a>
-            </div>
-            <i class="fa-solid fa-bars hamburger-menu-toggle"></i>
-        </header>
-<body class="relative bg-black text-white overflow-hidden min-h-screen">
+    <!-- Desktop Nav -->
+    <nav id="main-nav" class="hidden md:flex space-x-6 text-sm font-semibold items-center">
+      <a href="#">HOME</a>
+      <a href="#about-section">ABOUT US</a>
+      <a href="#Events">EVENTS</a>
+      <a href="results.html">RESULTS</a>
+      <a href="Schedule_Page.html">SCHEDULE</a>
+
+      <div class="relative group">
+        <button class="focus:outline-none">MORE ▾</button>
+        <div class="absolute hidden group-hover:block bg-gray-800 text-sm mt-1 p-2 rounded">
+          <a href="#register" class="block hover:text-cyan-300">REGISTER</a>
+          <a href="gallery.html" class="block hover:text-cyan-300">GALLERY</a>
+          <a href="#contact" class="block hover:text-cyan-300">CONTACT</a>
+          <a href="#Team" class="block hover:text-cyan-300">TEAM</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="w-full mt-4 hidden md:hidden flex-col space-y-2 text-center">
+      <a href="#" class="block">HOME</a>
+      <a href="#about-section" class="block">ABOUT US</a>
+      <a href="#Events" class="block">EVENTS</a>
+      <a href="results.html" class="block">RESULTS</a>
+      <a href="Schedule_Page.html" class="block">SCHEDULE</a>
+      <a href="#register" class="block">REGISTER</a>
+      <a href="gallery.html" class="block">GALLERY</a>
+      <a href="#contact" class="block">CONTACT</a>
+      <a href="#Team" class="block">TEAM</a>
+    </div>
+  </header>
 
   <!-- Particles Background -->
   <div id="tsparticles" class="absolute inset-0 -z-10"></div>
      
-  <!-- Content Box -->
-  <div class="max-w-4xl mx-auto mt-20 p-8 bg-black bg-opacity-70 rounded-2xl shadow-lg border border-cyan-500 relative z-10">
-    <h1 class="text-4xl md:text-5xl text-cyan-400 font-bold text-center mb-6 drop-shadow-lg">
+  <!-- Main Content -->
+  <div class="max-w-4xl mx-auto mt-20 p-6 sm:p-8 bg-black bg-opacity-70 rounded-2xl shadow-lg border border-cyan-500 relative z-10">
+    <h1 class="text-3xl sm:text-4xl md:text-5xl text-cyan-400 font-bold text-center mb-6 drop-shadow-lg">
       🚀 Interface 2025 - {Theme} Registration
     </h1>
 
     <!-- Guidelines -->
     <section class="mb-8">
-      <h2 class="text-xl text-teal-300 font-semibold mb-2 border-b border-teal-400 pb-1">📋 Guidelines for Registration:</h2>
-      <ul class="list-disc list-inside text-gray-300 space-y-1">
+      <h2 class="text-lg sm:text-xl text-teal-300 font-semibold mb-2 border-b border-teal-400 pb-1">📋 Guidelines for Registration:</h2>
+      <ul class="list-disc list-inside text-gray-300 space-y-1 text-sm sm:text-base">
         <li>💰 Registration fee: ₹200 per head</li>
         <li>👔 Formal dress is mandatory on the fest day</li>
         <li>💳 Payment must be made before registration</li>
@@ -71,8 +78,8 @@
 
     <!-- How to Register -->
     <section class="mb-8">
-      <h2 class="text-xl text-pink-400 font-semibold mb-2 border-b border-pink-400 pb-1">🛠️ How to Register:</h2>
-      <ol class="list-decimal list-inside text-gray-300 space-y-1">
+      <h2 class="text-lg sm:text-xl text-pink-400 font-semibold mb-2 border-b border-pink-400 pb-1">🛠️ How to Register:</h2>
+      <ol class="list-decimal list-inside text-gray-300 space-y-1 text-sm sm:text-base">
         <li>Click the Payment Gateway button below</li>
         <li>Select <strong>'FEST'</strong> under Fee Name</li>
         <li>Select <strong>INTERFACE 2024 - External</strong> under Category</li>
@@ -82,39 +89,39 @@
     </section>
 
     <!-- Buttons -->
-    <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
-      <a href="https://southindianbank.in/ChristFee/" target="_blank">
-        <button class="bg-gradient-to-r from-blue-700 to-cyan-400 text-black font-bold py-3 px-6 rounded-xl shadow-xl hover:scale-105 transition transform duration-300">
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+      <a href="https://southindianbank.in/ChristFee/" target="_blank" class="w-full sm:w-auto">
+        <button class="w-full sm:w-auto bg-gradient-to-r from-blue-700 to-cyan-400 text-black font-bold py-3 px-6 rounded-xl shadow-xl hover:scale-105 transition duration-300">
           💳 Payment Gateway
         </button>
       </a>
-      <a href="/register">
-        <button class="bg-green-400 text-black font-bold py-3 px-6 rounded-xl shadow-xl hover:bg-green-300 hover:scale-105 transition transform duration-300">
+      <a href="/register" class="w-full sm:w-auto">
+        <button class="w-full sm:w-auto bg-green-400 text-black font-bold py-3 px-6 rounded-xl shadow-xl hover:bg-green-300 hover:scale-105 transition duration-300">
           📝 Register Now
         </button>
       </a>
     </div>
   </div>
 
+  <!-- Mobile Menu Toggle Script -->
+  <script>
+    const toggleBtn = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+    toggleBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+  </script>
+
   <!-- tsParticles Config -->
   <script>
     tsParticles.load("tsparticles", {
       fullScreen: { enable: false },
       particles: {
-        number: {
-          value: 70,
-          density: { enable: true, area: 800 }
-        },
+        number: { value: 70, density: { enable: true, area: 800 }},
         color: { value: ["#00fff7", "#0ff", "#39ff14"] },
         shape: { type: "circle" },
-        opacity: {
-          value: 0.5,
-          random: true,
-        },
-        size: {
-          value: 3,
-          random: true
-        },
+        opacity: { value: 0.5, random: true },
+        size: { value: 3, random: true },
         move: {
           enable: true,
           speed: 1.5,
@@ -131,28 +138,15 @@
       },
       interactivity: {
         events: {
-          onHover: {
-            enable: true,
-            mode: "repulse"
-          },
-          onClick: {
-            enable: true,
-            mode: "push"
-          }
+          onHover: { enable: true, mode: "repulse" },
+          onClick: { enable: true, mode: "push" }
         },
         modes: {
-          repulse: {
-            distance: 100,
-            duration: 0.4
-          },
-          push: {
-            quantity: 4
-          }
+          repulse: { distance: 100, duration: 0.4 },
+          push: { quantity: 4 }
         }
       },
-      background: {
-        color: "#000"
-      }
+      background: { color: "#000" }
     });
   </script>
 </body>
