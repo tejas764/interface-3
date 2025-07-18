@@ -80,7 +80,7 @@ app.get('/all', adminAuth, async (req, res) => {
 app.get('/preRegister',(req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'preRegister.html'));
 });
-// ======= Registration Route =======
+// =======| Registration Route |=======
 app.post('/register', upload.single('receipt'), async (req, res) => {
   try {
     const { name, email, contact, institution, state } = req.body;
@@ -111,7 +111,7 @@ app.post('/register', upload.single('receipt'), async (req, res) => {
 
     await registration.save();
 
-    // ======= Send Email =======
+    // =======-- Send Email =======--
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
@@ -139,10 +139,10 @@ app.post('/register', upload.single('receipt'), async (req, res) => {
 <br/>
 <p>We've successfully received your payment receipt and confirmed your registration. Consider this your <b>"Loading Complete"<b> screen!</p>
 <p>Your <strong>WhatsApp group link<strong> will be sent to your registered email </strong>once your details have been verified by our team**. Please allow up to 24 hours for this process.</p>
-<p>You'll receive a detailed email with the **official schedule, event rules, and any specific instructions** for your chosen battles (events) very soon.</p>
-<p>In the meantime, mark your calendars for **August 23, 2025**!</p>
-<p>Keep up with all the action and sneak peeks on our Instagram: **<a href="https://www.instagram.com/interface.2025" style="color: #00ffff; text-decoration: none;" target="_blank">@interface.2025</a>**</p>
-<p>If you have any **side quests or queries**, our student coordinators are ready to assist. Visit our official website's <a href="www.christuniversity.in" style="color: #00ffff; text-decoration: none;">**Contact Us**</a> section for details, or reply directly to this email.</p>
+<p>You'll receive a detailed email with the <b>official schedule, event rules, and any specific instructions<b> for your chosen battles (events) very soon.</p>
+<p>In the meantime, mark your calendars for <b>August 23, 2025<b>!</p>
+<p>Keep up with all the action and sneak peeks on our Instagram: <a href="https://www.instagram.com/interface.2025" style="color: #00ffff; text-decoration: none;" target="_blank">@interface.2025</a>**</p>
+<p>If you have any <strong>side quests or queries</strong>, our student coordinators are ready to assist. Visit our official website's <a href="www.christuniversity.in" style="color: #00ffff; text-decoration: none;"><b>Contact Us<b></a> section for details, or reply directly to this email.</p>
 <br/>
 <p>Prepare for an epic experience!</p>
 <p>Best Regards,<br/>
@@ -168,7 +168,7 @@ app.get('/contact', (req, res) => {
 app.post('/contact', async (req, res) => {
   const { useremail, query, message } = req.body;
 
-  // Validate fields
+  //----------------------- Validate fields---------------------------
   if (!useremail) {
     return res.status(400).send('<h3>❌ Message must be at least 15 characters.</h3><a href="/contact">Go Back</a>');
   }
