@@ -1,3 +1,9 @@
+<p align="center">
+  <a href="README.md"><strong>OVERVIEW</strong></a> &nbsp; · &nbsp;
+  <a href="DEMO.md"><strong>DEMO & SCREENSHOTS</strong></a> &nbsp; · &nbsp;
+  <a href="DEMO.md#demo-setup"><strong>SETUP & DEPLOYMENT</strong></a>
+</p>
+
 # Interface — Event Registration Platform
 
 An Express-based event-registration project using MongoDB for registration records, Cloudinary for receipt uploads, and Nodemailer for confirmation and contact emails.
